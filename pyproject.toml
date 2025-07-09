@@ -1,9 +1,16 @@
 [project]
-name = "chatbot"
+name = "chatbot-cli"
 version = "0.1.0"
-description = "Add your description here"
-readme = "README.md"
-requires-python = ">=3.13"
+description = "An AI-powered command-line assistant with extensible tools."
+authors = [{ name = "Your Name", email = "your@email.com" }]
+requires-python = ">=3.9"
 dependencies = [
-    "requests>=2.32.4",
+    "openai>=1.23.6",
+    "python-dotenv>=1.0.1",
+    "rich>=13.7.1",
+    "pydantic>=2.7.1", # OpenAI SDK dependency, good to have explicit
 ]
+
+[project.scripts]
+# This creates the `chatbot` command when the package is installed
+chatbot = "chatbot.main:cli"
